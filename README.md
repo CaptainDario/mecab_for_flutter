@@ -17,9 +17,20 @@ dependencies:
 
 ## Libraries
 
+### Native platforms
+
 On `dart:io` platforms this plugin ships with the mecab binaries.
+
+### Web
+
 On web this package expects that the libraries are in `assets/blobs/`.
 Alternatively, the base `init` constructor can be used with a custom path.
+
+This library tries to load the mecab dictionary from the WASM filesystem.
+The easiest way to get the dictionary in it, is by bundling it when compiling mecab to wasm.
+However, it may be desirable to swap dictionaries. To do this, you need to load the dictionary into libmecab's wasm memory.
+
+[See the dart package](https://github.com/CaptainDario/mecab_for_dart?tab=readme-ov-file#building-the-binaries) for more details about the mecab libraries.
 
 ## Example
 
@@ -50,13 +61,3 @@ for(var token in tokens) {
   text += "\n";
 }
 ```
-
-### Notes for web usage
-
-This library tries to load the mecab dictionary from the WASM filesystem.
-The easiest way to get the dictionary in it, is by bundling it when compiling mecab to wasm.
-However, it may be desirable to swap dictionaries. To do this, you need to load the dictionary into libmecab's wasm memory.
-
-## Building the binaries
-
-[See the dart package](https://github.com/CaptainDario/mecab_for_dart?tab=readme-ov-file#building-the-binaries)
