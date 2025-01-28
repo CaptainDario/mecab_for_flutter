@@ -28,7 +28,7 @@ public class MecabForFlutterPlugin: FlutterPlugin, MethodCallHandler {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
       val channel = MethodChannel(registrar.messenger(), "mecab_for_flutter")
-      channel.setMethodCallHandler(MecabForPlugin())
+      channel.setMethodCallHandler(MecabForFlutterPlugin())
     }
   }
 
