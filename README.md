@@ -61,3 +61,5 @@ for(var token in tokens) {
   text += "\n";
 }
 ```
+
+For a more detailed example see [the ./example/](./example)
