@@ -1,7 +1,6 @@
 name: mecab_for_flutter
 description: Flutter plugin which provides binding to Mecab library (Japanese Morphological Analyzer)
-version: 1.0.7
-publish_to: none
+version: 0.0.1
 homepage:
   https://github.com/captaindario/mecab_for_flutter
 funding:
@@ -16,8 +15,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  mecab_for_dart:
-    path: ../mecab_for_dart/
+  mecab_for_dart: 1.1.0
+  universal_ffi: any
+  universal_io: any
+  path: any
 
   flutter_web_plugins:
     sdk: flutter

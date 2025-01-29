@@ -117,7 +117,7 @@
     },
     {
       "name": "mecab_for_dart",
-      "rootUri": "../../mecab_for_dart",
+      "rootUri": "file:///Users/darioklepoch/.pub-cache/hosted/pub.dev/mecab_for_dart-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -236,7 +236,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2025-01-28T08:18:50.926511Z",
+  "generated": "2025-01-29T07:13:36.015467Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/darioklepoch/dev/programs/flutter",
