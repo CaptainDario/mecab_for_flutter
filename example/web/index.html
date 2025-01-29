@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
@@ -31,8 +18,77 @@
 
   <title>example</title>
   <link rel="manifest" href="manifest.json">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Flutter Web App</title>
+  <script src="flutter.js" defer></script>
+  <style>
+    /* Loading screen styling */
+    #loading-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Spinner animation */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #000;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    {{flutter_js}}
+    {{flutter_build_config}}
+
+    // Create loading container
+    const loadingContainer = document.createElement('div');
+    loadingContainer.id = 'loading-container';
+
+    // Create spinner element
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+
+    // Create loading text
+    const loadingText = document.createElement('div');
+    loadingText.textContent = "Loading example, this may take while...";
+
+    // Append elements to the body
+    loadingContainer.appendChild(spinner);
+    loadingContainer.appendChild(loadingText);
+    document.body.appendChild(loadingContainer);
+
+    _flutter.loader.load({
+      onEntrypointLoaded: async function(engineInitializer) {
+        loadingText.textContent = "Initializing engine...";
+        const appRunner = await engineInitializer.initializeEngine();
+
+        loadingText.textContent = "Running app...";
+        await appRunner.runApp();
+
+        // Remove the loading container after the app starts
+        document.body.removeChild(loadingContainer);
+      }
+    });
+  </script>
 </body>
 </html>
