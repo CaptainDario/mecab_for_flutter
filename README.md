@@ -5,7 +5,7 @@ MeCab(Japanese Morphological Analyzer) bindings for flutter on all platforms.
 
 | Android | iOS | Windows | MacOS | Linux | Web | Web --wasm |
 |:-------:|:---:|:-------:|:-----:|:-----:|:---:|:----------:|
-|    ✅    |  ✅  |    🚧    |   ✅   |   🚧   |  ✅  |      [❌](https://github.com/CaptainDario/mecab_for_dart/issues/5)     |
+|    ✅    |  ✅  |    🚧    |   ✅   |   ✅   |  ✅  |      [❌](https://github.com/CaptainDario/mecab_for_dart/issues/5)     |
 
 ## Installation
 

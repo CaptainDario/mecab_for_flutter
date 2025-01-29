@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 0.0.3
+
+* Linux support
+
 ## 0.0.2
 
 * Corrected support matrix
