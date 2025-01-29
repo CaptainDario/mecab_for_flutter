@@ -7,7 +7,7 @@
 // https://forums.swift.org/t/swift-static-libraries-dont-copy-generated-objective-c-header/19816
 #import "mecab_for_flutter-Swift.h"
 #endif
-MecabForFlutter
+
 @implementation MecabForFlutterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftMecabForFlutterPlugin registerWithRegistrar:registrar];
