@@ -47,7 +47,14 @@ target_link_libraries(${PLUGIN_NAME} PRIVATE flutter flutter_wrapper_plugin)
 # List of absolute paths to libraries that should be bundled with the plugin.
 # This list could contain prebuilt libraries, or libraries created by an
 # external build triggered from this build file.
+message(STATUS "Detected processor architecture: ${CMAKE_SYSTEM_PROCESSOR}")
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "ARM64")
+    set(MECAB_DLL ${CMAKE_CURRENT_SOURCE_DIR}/libmecab_arm64.dll)
+elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" OR
+        CMAKE_SYSTEM_PROCESSOR STREQUAL "AMD64")
+    set(MECAB_DLL ${CMAKE_CURRENT_SOURCE_DIR}/libmecab_x86.dll)
+endif()
 set(mecab_for_flutter_bundled_libraries
-  ""
+  ${MECAB_DLL}
   PARENT_SCOPE
 )
