@@ -1,5 +1,10 @@
 # Mecab for Flutter
 
+## 1.0.0
+
+* Initial stable release
+  * Support for all platforms tested
+
 ## 0.0.3
 
 * Linux support

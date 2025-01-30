@@ -62,4 +62,4 @@ for(var token in tokens) {
 }
 ```
 
-For a more detailed example see [the ./example/](./example)
+For a more detailed example see [the ./example/](./example).
