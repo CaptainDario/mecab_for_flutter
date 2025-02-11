@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
-import 'package:loading_indicator/loading_indicator.dart';
+import 'mecab_loading_indicator.dart';
 
 import 'package:mecab_for_flutter/mecab_for_flutter.dart';
 import "helper.dart"
