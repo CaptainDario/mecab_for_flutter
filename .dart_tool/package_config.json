@@ -236,10 +236,10 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2025-01-30T05:30:23.932025Z",
+  "generated": "2025-02-11T07:39:07.152431Z",
   "generator": "pub",
-  "generatorVersion": "3.6.0",
+  "generatorVersion": "3.6.2",
   "flutterRoot": "file:///Users/darioklepoch/dev/programs/flutter",
-  "flutterVersion": "3.27.1",
+  "flutterVersion": "3.27.4",
   "pubCache": "file:///Users/darioklepoch/.pub-cache"
 }
