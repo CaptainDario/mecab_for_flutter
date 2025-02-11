@@ -12,6 +12,7 @@ import 'package:universal_io/io.dart';
 
 
 
+/// Loades the mecab dynamic library
 Future<FfiHelper> loadMecabDartLib () async {
 
   FfiHelper ffiHelper;
