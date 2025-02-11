@@ -87,27 +87,7 @@ class _MyAppState extends State<MyApp> {
                 future: initPlatformState(),
                 builder: (context, snapshot) {
 
-                  if(!initDone) return Expanded(
-                    child: Align(
-                      alignment: Alignment.center,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        spacing: 8,
-                        children: [
-                          SizedBox(
-                            height: 64,
-                            width: 64,
-                            child: LoadingIndicator(
-                              indicatorType: Indicator.audioEqualizer,
-                              colors: [Colors.red, Colors.deepOrange, Colors.yellow, Colors.green],
-                              strokeWidth: 1,
-                            ),
-                          ),
-                          Text("Loading MeCab libraries...")
-                        ],
-                      )
-                    ),
-                  );
+                  if(!initDone) return MecabLoadingIndicator();
 
                   return SingleChildScrollView(
                     child: SelectionArea(
