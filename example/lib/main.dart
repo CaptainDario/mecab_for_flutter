@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
+import 'package:loading_indicator/loading_indicator.dart';
 
 import 'package:mecab_for_flutter/mecab_for_flutter.dart';
 import "helper.dart"
@@ -24,13 +25,14 @@ class _MyAppState extends State<MyApp> {
   String text = "";
   /// mecab instance
   var tagger = new Mecab();
-  ///
+  /// List of parsed mecab tokens
   List<TokenNode> tokens = [];
+  /// Has the init completed
+  bool initDone = false;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
   }
 
   Future<void> initPlatformState() async {
@@ -48,6 +50,8 @@ class _MyAppState extends State<MyApp> {
       print("Connection to the C-side established: ${tagger.mecabDartFfi.nativeAddFunc(3, 3) == 6}");
 
       tokens = tagger.parse(controller.text);
+
+      initDone = true;
 
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
@@ -79,33 +83,61 @@ class _MyAppState extends State<MyApp> {
                 }))
               ),
               SizedBox(height: 20,),
-              SingleChildScrollView(
-                child: SelectionArea(
-                  child: Table(
-                    children: [
-                      TableRow(
-                        children: ["surface", "POS", "Base", "Reading", "Pronunciation"].map((e) => 
-                          Center(
-                            child: Text(e)
-                          )
-                        ).toList()
-                      ),
-                      ...tokens
-                        .where((token) => token.features.length == 9)
-                        .map((t) => 
+              FutureBuilder(
+                future: initPlatformState(),
+                builder: (context, snapshot) {
+
+                  if(!initDone) return Expanded(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 8,
+                        children: [
+                          SizedBox(
+                            height: 64,
+                            width: 64,
+                            child: LoadingIndicator(
+                              indicatorType: Indicator.audioEqualizer,
+                              colors: [Colors.red, Colors.deepOrange, Colors.yellow, Colors.green],
+                              strokeWidth: 1,
+                            ),
+                          ),
+                          Text("Loading MeCab libraries...")
+                        ],
+                      )
+                    ),
+                  );
+
+                  return SingleChildScrollView(
+                    child: SelectionArea(
+                      child: Table(
+                        children: [
                           TableRow(
-                            children: [
-                              SelectableText(t.surface),
-                              SelectableText(t.features.sublist(0, 4).toString()),
-                              SelectableText(t.features[4]),
-                              SelectableText(t.features[7]),
-                              SelectableText(t.features[8])
-                            ]
-                          )
-                        ).toList()
-                    ]
-                  ),
-                ),
+                            children: ["surface", "POS", "Base", "Reading", "Pronunciation"].map((e) => 
+                              Center(
+                                child: Text(e)
+                              )
+                            ).toList()
+                          ),
+                          ...tokens
+                            .where((token) => token.features.length == 9)
+                            .map((t) => 
+                              TableRow(
+                                children: [
+                                  SelectableText(t.surface),
+                                  SelectableText(t.features.sublist(0, 4).toString()),
+                                  SelectableText(t.features[4]),
+                                  SelectableText(t.features[7]),
+                                  SelectableText(t.features[8])
+                                ]
+                              )
+                            ).toList()
+                        ]
+                      ),
+                    ),
+                  );
+                }
               ),
             ]
           ),
