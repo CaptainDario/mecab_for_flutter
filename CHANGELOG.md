@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 1.0.1
+
+* Correctly export libraries on native and web
+
 ## 1.0.0
 
 * Initial stable release
