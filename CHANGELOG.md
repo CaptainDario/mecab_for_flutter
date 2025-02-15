@@ -1,5 +1,10 @@
 # Mecab for Flutter
 
+## 1.0.3
+
+* Include example for analysis
+* Require higher `mecab_for_dart` version
+
 ## 1.0.2
 
 * Fixed analysis issues
