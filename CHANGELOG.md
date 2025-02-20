@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 1.0.4
+
+* Fixed: compilation with Flutter 3.29
+
 ## 1.0.3
 
 * Include example for analysis
