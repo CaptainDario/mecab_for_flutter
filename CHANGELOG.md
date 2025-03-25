@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 1.0.5
+
+* Removed web related code from native code
+
 ## 1.0.4
 
 * Fixed: compilation with Flutter 3.29
