@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 1.0.6
+
+* Compile on Android for 16KB page alignment
+
 ## 1.0.5
 
 * Removed web related code from native code
