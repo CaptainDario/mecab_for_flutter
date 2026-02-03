@@ -139,17 +139,18 @@ packages:
   mecab_for_dart:
     dependency: transitive
     description:
-      path: "../../mecab_for_dart"
-      relative: true
-    source: path
-    version: "1.1.7"
+      name: mecab_for_dart
+      sha256: "179be72351cb08190eb9a364d1b59d59b45044391247c3b14e73169d3ba09ab7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
   mecab_for_flutter:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "1.0.6"
+    version: "1.1.0"
   meta:
     dependency: transitive
     description:

@@ -10,7 +10,6 @@
         "flutter",
         "flutter_web_plugins",
         "mecab_for_dart",
-        "path",
         "universal_ffi",
         "universal_io"
       ],
@@ -52,11 +51,6 @@
       "dependencies": [
         "flutter"
       ]
-    },
-    {
-      "name": "path",
-      "version": "1.9.1",
-      "dependencies": []
     },
     {
       "name": "universal_io",
@@ -167,6 +161,11 @@
         "clock",
         "collection"
       ]
+    },
+    {
+      "name": "path",
+      "version": "1.9.1",
+      "dependencies": []
     },
     {
       "name": "matcher",
