@@ -117,9 +117,9 @@
     },
     {
       "name": "mecab_for_dart",
-      "rootUri": "../../mecab_for_dart",
+      "rootUri": "file:///Users/darioklepoch/.pub-cache/hosted/pub.dev/mecab_for_dart-1.2.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.16"
     },
     {
       "name": "meta",

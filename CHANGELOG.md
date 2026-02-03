@@ -1,5 +1,10 @@
 # Mecab for Flutter
 
+## 1.1.0
+
+* Unified flutter and dart package: no `init_flutter` anymore
+* Added isolate serialization method
+
 ## 1.0.6
 
 * Compile on Android for 16KB page alignment
