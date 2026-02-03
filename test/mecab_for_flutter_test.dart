@@ -1,6 +1,7 @@
-import 'package:mecab_for_flutter/mecab_flutter.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'dart:io';
+
+import 'package:mecab_for_flutter/mecab_for_flutter.dart';
 
 
 
