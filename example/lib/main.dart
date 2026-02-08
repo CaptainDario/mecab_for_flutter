@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   /// result of mecab
   String text = "";
   /// mecab instance
-  var tagger = new Mecab();
+  late Mecab tagger;
   /// List of parsed mecab tokens
   List<TokenNode> tokens = [];
   /// Has the init completed
@@ -45,9 +45,7 @@ class _MyAppState extends State<MyApp> {
       // Initialize mecab tagger here 
       //   + 1st parameter : dictionary folder
       //   + 2nd parameter : additional mecab options
-      await tagger.init(null, ipaDictPath, true);
-
-      print("Connection to the C-side established: ${tagger.mecabDartFfi.nativeAddFunc(3, 3) == 6}");
+      tagger = await Mecab.create(null, ipaDictPath, "-Owakati");
 
       tokens = tagger.parse(controller.text);
 

@@ -9,8 +9,7 @@ void main() {
   
   test('test mecab for dart', () async {
     print(Directory.current);
-    final tagger = Mecab();
-    await tagger.init("mecab.dylib", "ipadic", true);
+    final tagger = await Mecab.create("mecab.dylib", "ipadic", "-Owakati");
 
     final surfaces = tagger.parse("林檎を食べる").map((e) => e.surface,).toList();
     expect(surfaces, ["林檎", "を", "食べる", "EOS"]);
