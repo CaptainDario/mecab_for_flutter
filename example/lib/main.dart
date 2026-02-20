@@ -30,9 +30,12 @@ class _MyAppState extends State<MyApp> {
   /// Has the init completed
   bool initDone = false;
 
+  late Future init;
+
   @override
   void initState() {
     super.initState();
+    init = initPlatformState();
   }
 
   Future<void> initPlatformState() async {
@@ -45,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       // Initialize mecab tagger here 
       //   + 1st parameter : dictionary folder
       //   + 2nd parameter : additional mecab options
-      tagger = await Mecab.create(null, ipaDictPath, "-Owakati");
+      tagger = await Mecab.create(null, ipaDictPath, "");
 
       tokens = tagger.parse(controller.text);
 
@@ -82,7 +85,7 @@ class _MyAppState extends State<MyApp> {
               ),
               SizedBox(height: 20,),
               FutureBuilder(
-                future: initPlatformState(),
+                future: init,
                 builder: (context, snapshot) {
 
                   if(!initDone) return MecabLoadingIndicator();
