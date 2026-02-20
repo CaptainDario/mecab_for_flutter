@@ -33,34 +33,16 @@ For more details about the binaries see
 * [Getting the binaries](https://pub.dev/packages/mecab_for_dart#getting-the-binaries)
 * [Building the binaries](https://pub.dev/packages/mecab_for_dart#building-the-binaries)
 
-## Example
+## Usage
 
-Init Mecab:
-
-```dart
-var tagger = new Mecab();
-await tagger.initFlutter("path/to/your/dictionary/", true);
-```
-
-Set the boolean option in `init` function to `true` if you want to get the tokens including features,
-set it to `false` if you only want the token surfaces.
-
-Use the tagger to parse text:
+The basic usage is super simple and nearly the same as the dart packge.
+The only difference is that this package ships pre-compiled binaries for mecab.
+Therefore, it is no neccessary to pass the path to the mecab binary.
 
 ```dart
-var tokens = tagger.parse('にわにわにわにわとりがいる。');
-var text = '';
-
-for(var token in tokens) {
-  text += token.surface + "\t";
-  for(var i = 0; i < token.features.length; i++) {
-    text += token.features[i];
-    if(i + 1 < token.features.length) {
-       text += ",";
-    }
-  }
-  text += "\n";
-}
+var tagger = await Mecab.create("<DICT_MECAB_PATH>", "<YOUR_MECAB_OPTIONS>");
+tagger.parse('にわにわにわにわとりがいる。')
+// ... do somthing with the result
 ```
 
-For a more detailed example see [the ./example/](./example).
+For more details see [the dart package's documentation](https://github.com/CaptainDario/mecab_for_dart) and for a more detailed example see [the ./example/](./example).
