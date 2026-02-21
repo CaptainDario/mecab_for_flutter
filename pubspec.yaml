@@ -9,14 +9,12 @@ funding:
   - https://www.patreon.com/DaAppLab
 
 environment:
-  sdk: '>=2.16.0 <4.0.0'
-  flutter: ">=1.10.0"
+  sdk: '>=3.10.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  mecab_for_dart: #^2.0.0
-    path: /Users/darioklepoch/dev/flutter_packages/mecab_for_dart/
+  mecab_for_dart: ^2.0.0
 
   flutter_web_plugins:
     sdk: flutter
