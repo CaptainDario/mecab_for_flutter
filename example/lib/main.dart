@@ -54,8 +54,12 @@ class _MyAppState extends State<MyApp> {
 
       initDone = true;
 
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+    }
+    catch (e, stack) {
+      // CHANGED: Catch all exceptions, not just PlatformExceptions!
+      print("CRITICAL ERROR DURING MECAB INIT: $e");
+      print(stack);
+      platformVersion = 'Failed to get platform version or init mecab.';
     }
 
     if (!mounted) return;
