@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       // Initialize mecab tagger here 
       //   + 1st parameter : dictionary folder
       //   + 2nd parameter : additional mecab options
-      tagger = await Mecab.create(null, ipaDictPath, "");
+      tagger = await Mecab.create(dictDir: ipaDictPath);
 
       tokens = tagger.parse(controller.text);
 
