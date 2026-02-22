@@ -82,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                 maxLines: null,
                 onChanged: ((value) => setState(() {
                   tokens = tagger.parse(controller.text);
-                  print(tokens.first.surface.length);
+                  if(tokens.isNotEmpty) print(tokens.first.surface.length);
                 }))
               ),
               SizedBox(height: 20,),
