@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:flutter/services.dart';
 import 'mecab_loading_indicator.dart';
 
 import 'package:mecab_for_flutter/mecab_for_flutter.dart';
@@ -56,7 +55,6 @@ class _MyAppState extends State<MyApp> {
 
     }
     catch (e, stack) {
-      // CHANGED: Catch all exceptions, not just PlatformExceptions!
       print("CRITICAL ERROR DURING MECAB INIT: $e");
       print(stack);
       platformVersion = 'Failed to get platform version or init mecab.';
