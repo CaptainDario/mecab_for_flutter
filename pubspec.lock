@@ -196,10 +196,10 @@ packages:
     dependency: "direct main"
     description:
       name: mecab_for_dart
-      sha256: "605c85037ce4e7a6ece6d0c40d19d7869e179f07734c3a3e066e547040666926"
+      sha256: "10aee9bb5d0c2850b811984e4f64ac5bf402337b39aadf3891d54db0659088c5"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.2"
   meta:
     dependency: transitive
     description:
