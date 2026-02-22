@@ -1,5 +1,9 @@
 # Mecab for Flutter
 
+## 2.0.0
+
+* This package is now basically deprecated (only used for the example)
+
 ## 1.1.0
 
 * Unified flutter and dart package: no `init_flutter` anymore
