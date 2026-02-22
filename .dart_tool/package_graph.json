@@ -55,7 +55,9 @@
       "version": "2.0.0",
       "dependencies": [
         "code_assets",
+        "ffi",
         "hooks",
+        "logging",
         "native_toolchain_c",
         "universal_ffi",
         "universal_io"
@@ -89,7 +91,7 @@
     },
     {
       "name": "args",
-      "version": "2.7.0",
+      "version": "2.6.0",
       "dependencies": []
     },
     {
@@ -177,6 +179,24 @@
       ]
     },
     {
+      "name": "universal_io",
+      "version": "2.2.2",
+      "dependencies": [
+        "collection",
+        "meta",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "universal_ffi",
+      "version": "1.1.3",
+      "dependencies": [
+        "ffi",
+        "path",
+        "wasm_ffi"
+      ]
+    },
+    {
       "name": "native_toolchain_c",
       "version": "0.17.4",
       "dependencies": [
@@ -189,12 +209,9 @@
       ]
     },
     {
-      "name": "code_assets",
-      "version": "1.0.0",
-      "dependencies": [
-        "collection",
-        "hooks"
-      ]
+      "name": "logging",
+      "version": "1.3.0",
+      "dependencies": []
     },
     {
       "name": "hooks",
@@ -209,21 +226,16 @@
       ]
     },
     {
-      "name": "universal_io",
-      "version": "2.3.1",
-      "dependencies": [
-        "collection",
-        "meta",
-        "typed_data"
-      ]
+      "name": "ffi",
+      "version": "2.2.0",
+      "dependencies": []
     },
     {
-      "name": "universal_ffi",
-      "version": "1.5.0",
+      "name": "code_assets",
+      "version": "1.0.0",
       "dependencies": [
-        "ffi",
-        "path",
-        "wasm_ffi"
+        "collection",
+        "hooks"
       ]
     },
     {
@@ -252,7 +264,7 @@
     },
     {
       "name": "source_span",
-      "version": "1.10.2",
+      "version": "1.10.1",
       "dependencies": [
         "collection",
         "path",
@@ -261,7 +273,7 @@
     },
     {
       "name": "async",
-      "version": "2.13.0",
+      "version": "2.12.0",
       "dependencies": [
         "collection",
         "meta"
@@ -278,7 +290,7 @@
     },
     {
       "name": "leak_tracker",
-      "version": "11.0.2",
+      "version": "11.0.1",
       "dependencies": [
         "clock",
         "collection",
@@ -301,16 +313,29 @@
       ]
     },
     {
-      "name": "pub_semver",
-      "version": "2.2.0",
+      "name": "typed_data",
+      "version": "1.4.0",
       "dependencies": [
         "collection"
       ]
     },
     {
-      "name": "logging",
-      "version": "1.3.0",
-      "dependencies": []
+      "name": "wasm_ffi",
+      "version": "2.0.7",
+      "dependencies": [
+        "ffi",
+        "http",
+        "meta",
+        "path",
+        "web"
+      ]
+    },
+    {
+      "name": "pub_semver",
+      "version": "2.2.0",
+      "dependencies": [
+        "collection"
+      ]
     },
     {
       "name": "glob",
@@ -331,32 +356,24 @@
       ]
     },
     {
-      "name": "typed_data",
-      "version": "1.4.0",
-      "dependencies": [
-        "collection"
-      ]
+      "name": "vm_service",
+      "version": "14.3.1",
+      "dependencies": []
     },
     {
-      "name": "wasm_ffi",
-      "version": "2.3.0",
+      "name": "web",
+      "version": "1.1.0",
+      "dependencies": []
+    },
+    {
+      "name": "http",
+      "version": "1.3.0",
       "dependencies": [
-        "ffi",
-        "http",
+        "async",
+        "http_parser",
         "meta",
-        "path",
         "web"
       ]
-    },
-    {
-      "name": "ffi",
-      "version": "2.2.0",
-      "dependencies": []
-    },
-    {
-      "name": "vm_service",
-      "version": "15.0.2",
-      "dependencies": []
     },
     {
       "name": "file",
@@ -364,21 +381,6 @@
       "dependencies": [
         "meta",
         "path"
-      ]
-    },
-    {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "http",
-      "version": "1.6.0",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
       ]
     },
     {
