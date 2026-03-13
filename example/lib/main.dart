@@ -104,15 +104,18 @@ class _MyAppState extends State<MyApp> {
                             ).toList()
                           ),
                           ...tokens
-                            .where((token) => token.features.length == 9)
                             .map((t) => 
                               TableRow(
                                 children: [
                                   SelectableText(t.surface),
-                                  SelectableText(t.features.sublist(0, 4).toString()),
-                                  SelectableText(t.features[4]),
-                                  SelectableText(t.features[7]),
-                                  SelectableText(t.features[8])
+                                  SelectableText(
+                                    t.features.length > 4 ? t.features.sublist(0, 4).toString() : ""),
+                                  SelectableText(
+                                    t.features.length > 4 ? t.features[4] : ""),
+                                  SelectableText(
+                                    t.features.length > 7 ? t.features[7] : ""),
+                                  SelectableText(
+                                    t.features.length > 8 ? t.features[8]: "")
                                 ]
                               )
                             ).toList()
